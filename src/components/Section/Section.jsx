@@ -20,7 +20,7 @@ const Section = () => {
 
     return (
         <>
-            <section className="w-[200px] fixed z-10 h-screen px-5 flex flex-col text-gray-600 overflow-scroll dark:bg-gray-700 dark:text-white">
+            <section className="w-[13%] fixed z-10 h-screen px-5 flex flex-col text-gray-600 overflow-scroll dark:bg-gray-700 dark:text-white">
                 {
                     genres.map((e,i)=> <EachSec key={i} name={e.name}/> )
                 }

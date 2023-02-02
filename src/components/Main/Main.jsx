@@ -16,6 +16,7 @@ const Main = () => {
 
         getMovies(page).then(res => {
             setMovies(res.results)
+            console.log(res.results[0]);
         })
 
 
@@ -26,12 +27,12 @@ const Main = () => {
 
     return (
         <>
-            <section className="ml-[200px] mt-[50px] flex flex-col gap-5 p-10 flex-wrap items-center justify-center dark:bg-gray-600 dark:text-white">
+            <section className="ml-[13%] mt-[50px] flex flex-col gap-5 p-10 flex-wrap items-center justify-center dark:bg-gray-600 dark:text-white">
                 <h2 className="text-center text-4xl">Movies</h2>
                 <h3 className="text-2xl text-center mt-3">Populares</h3>
                 <div className="flex gap-5 flex-wrap justify-center">
                     {
-                        movies.map((e, i) => <MovieCard key={i} title={e.title} img={e.poster_path} rating={Math.round(e.vote_average / 2)} />)
+                        movies.map((e, i) => <MovieCard key={i} id={e.id} title={e.title} img={e.poster_path} rating={Math.round(e.vote_average / 2)} />)
                     }
                 </div>
                 <div className="p-3 flex  gap-4 items-center text-2xl">

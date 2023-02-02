@@ -1,8 +1,7 @@
-import NavBar from './components/NavBar/NavBar'
-import Main from './components/Main/Main'
-import Section from './components/Section/Section';
-const firebase = require("firebase");
 
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home'
+import Movie from './pages/Movie'
 
 
 
@@ -12,13 +11,14 @@ function App() {
 
   return (
     <>
-      <div className='flex'>
-        <Section />
-        <div className='w-full'>
-          <NavBar />
-          <Main />
-        </div>
-      </div>
+      <BrowserRouter>
+      <Routes>
+        
+          <Route path='/' element={<Home />} />
+          <Route path='/movie/:id' element={<Movie />} />
+        
+      </Routes>
+    </BrowserRouter>
     </>
   )
 }
